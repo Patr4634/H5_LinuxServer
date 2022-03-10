@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  linuxserver:
+    image: linuxserver
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8001:8001
+    healthcheck:
+      test: ["executable", "arg"]
+      interval: 1m30s
+      timeout: 40s
+      retries: 5
+      start_period: 30s

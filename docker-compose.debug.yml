@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  linuxserver:
+    image: linuxserver
+    build:
+      context: .
+      dockerfile: ./Dockerfile
