@@ -77,14 +77,11 @@ void StartServer()
         string word;
         vector<int> timetable;
 
-        for (int i = 0; i < 100; i++)
-        {
-            auto time_1 = high_resolution_clock::now();
-            SuggestWord(query, &word);
-            auto time_2 = high_resolution_clock::now();
-            auto miliseconds = duration_cast<milliseconds>(time_2 - time_1);
-            timetable.push_back(miliseconds.count());
-        }
+        auto time_1 = high_resolution_clock::now();
+        SuggestWord(query, &word);
+        auto time_2 = high_resolution_clock::now();
+        auto miliseconds = duration_cast<milliseconds>(time_2 - time_1);
+        timetable.push_back(miliseconds.count());
 
         int avg = 0;
         int sum = 0;
